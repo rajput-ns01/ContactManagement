@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+Project Title: Contact Management System
+Project Description
+The Contact Management System is a web application considered to manage and unite contact information for individuals. It allows users to create, edit, delete, and view contact information such as first name, last name, email, phone number, company, and job title. The system is built using React for the frontend, Express.js for the backend, and MongoDB for the database.
+This application allows users to:
+•	Add new contacts with detailed information.
+•	Edit existing contact details.
+•	Delete contacts.
+•	View a list of all contacts in a user-friendly table.
+Technologies Used
+•	Frontend: React.js, Material UI
+•	Backend: Node.js, Express.js
+•	Database: MongoDB (NoSQL)
+Steps for Setup
+1. Clone the repository:
+git clone <repository-url>
+cd <project-directory>
+2. Install the dependencies:
+•	Backend dependencies (Node.js):
+o	Go to the backend directory.
+o	Run the following command to install necessary packages:
+                        npm install
+•	Frontend dependencies (React):
+o	Go to the frontend directory.
+o	Run the following command to install necessary packages:
+                        npm install
+3. Set up environment variables:
+•	Create a .env file in the backend root directory and add your MongoDB connection URI:
+MONGO_URI=mongodb+srv://<your-username>:<your-password>@cluster0.mongodb.net/<your-database>?retryWrites=true&w=majority
+4. Start the application:
+•	Backend: In the backend directory, run the following command to start the Express server:
+            npm start
+•	Frontend: In the frontend directory, run the following command to start the React development server:
+            npm start
+Your application should now be running at http://localhost:3000 (frontend) and http://localhost:5000 (backend).
+Database Schema Script (MongoDB)
+const mongoose = require('mongoose');
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+const contactSchema = new mongoose.Schema({
+    firstName: { type: String },
+    lastName: { type: String },
+    email: { type: String, unique: true  },
+    phone: { type: String },
+    company: { type: String },
+    job: { type: String }
+});
 
-## Available Scripts
 
-In the project directory, you can run:
+Challenges and Solutions
+1.	Challenge: CORS issues
+o	When connecting the frontend (React) with the backend (Express), I faced problem of Cross-Origin Resource Sharing (CORS) issues, preventing the frontend from making requests to the backend.
+o	Solution: I solved this issue by using the cors middleware in the Express server, which allows cross-origin requests from different domains.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
