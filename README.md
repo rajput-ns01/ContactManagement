@@ -50,3 +50,5 @@ Challenges and Solutions
 o	When connecting the frontend (React) with the backend (Express), I faced problem of Cross-Origin Resource Sharing (CORS) issues, preventing the frontend from making requests to the backend.
 o	Solution: I solved this issue by using the cors middleware in the Express server, which allows cross-origin requests from different domains.
 
+![image](https://github.com/user-attachments/assets/d40f5954-1278-40eb-8b91-eebe26de8358)
+
